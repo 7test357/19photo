@@ -19,6 +19,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            display: none; /* 초기에는 숨김 */
         }
 
         .gallery img {
@@ -86,7 +87,9 @@
         function checkLogin() {
             const id = prompt("아이디를 입력하세요:");
             const pw = prompt("비밀번호를 입력하세요:");
-            if (id !== "19" || pw !== "photo") {
+            if (id === "19" && pw === "photo") {
+                document.querySelector('.gallery').style.display = 'flex';
+            } else {
                 alert("로그인 실패");
                 window.location.href = "about:blank";
             }
