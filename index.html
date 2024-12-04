@@ -64,18 +64,17 @@
 <body>
     <h1>사진 갤러리</h1>
     <div class="gallery">
-      <img src="image/wow.jpg" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow0.jpg" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow1.png" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow2.jpg" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow3.jpg" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow4.jpg" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow5.jpg" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow6.jpg" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow7.jpg" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow8.jpg" alt="사진 1" onclick="openModal(this.src)">
-      <img src="image/wow9.jpg" alt="사진 1" onclick="openModal(this.src)">
-      
+        <img src="image/wow.jpg" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow0.jpg" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow1.png" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow2.jpg" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow3.jpg" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow4.jpg" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow5.jpg" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow6.jpg" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow7.jpg" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow8.jpg" alt="사진 1" onclick="openModal(this.src)">
+        <img src="image/wow9.jpg" alt="사진 1" onclick="openModal(this.src)">
     </div>
 
     <div id="myModal" class="modal" onclick="closeModal()">
@@ -84,6 +83,15 @@
     </div>
 
     <script>
+        function checkLogin() {
+            const id = prompt("아이디를 입력하세요:");
+            const pw = prompt("비밀번호를 입력하세요:");
+            if (id !== "19" || pw !== "photo") {
+                alert("로그인 실패");
+                window.location.href = "about:blank";
+            }
+        }
+
         function openModal(src) {
             document.getElementById("modalImage").src = src;
             document.getElementById("myModal").style.display = "block";
@@ -92,6 +100,8 @@
         function closeModal() {
             document.getElementById("myModal").style.display = "none";
         }
+
+        window.onload = checkLogin;
     </script>
 </body>
 </html>
